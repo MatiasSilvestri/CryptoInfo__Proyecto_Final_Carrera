@@ -52,10 +52,22 @@ const showData = (data) => { //Print data on screen
         <img class="w-14 mt-3" src="${val.image}"/>
         <p class="pl-3 mt-2">${val.name}</p>
         </td>
-        <td class=" p-1 border-gray-500">${val.current_price.toFixed(2)}$</td>
-        <td class=" p-1 border-gray-500">${allprofit > 0 ? `<span class="text-green-700">${allprofit}%</span>` : `<span class="text-red-600">${allprofit}%</span>`}</td>
-        <td class=" p-1 border-gray-500">${val.market_cap.toString().slice(0, -6)}M</td>
-        <td class=" p-1 border-gray-500"><button class="btn-limpio" style="background:none; border:none; padding:0; cursor:pointer; color:hover:text-red-600"> Add Favorite ☆ </button></td>
+        <td class=" p-2 border-gray-500">
+          ${val.current_price.toLocaleString('es-AR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          })}
+          ARS
+        </td>
+        <td class=" p-2 border-gray-500">${allprofit > 0 ? `<span class="text-green-700">${allprofit}%</span>` : `<span class="text-red-600">${allprofit}%</span>`}</td>
+        <td class="p-2 border-gray-500">
+            ${(val.market_cap / 1000000).toLocaleString('es-AR', {
+                  minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            })}
+            ARS
+        </td>
+        <td class=" p-10 border-gray-500"><button class="btn-limpio" style="background:none; border:none; padding:0; cursor:pointer; color:hover:text-red-600"> Add Favorite ☆ </button></td>
 
     </tr>`;
             tableData.innerHTML += dataItem;
@@ -102,7 +114,11 @@ const showModal = (data, cprize) => {
        </div>
        <div class="modal-right">
        <h2 class="mb-1 text-3xl capitalize font-bold text-gray-700">Current Prize:</h2>
-       <p class="mb-4 capitalize text-2xl font-semibold">1 ${data.symbol}= <span class="text-yellow-400">${cprize}$</span></p>
+       <p class="mb-4 capitalize text-2xl font-semibold">1 ${data.symbol}= <span class="text-yellow-400">
+                  ${Number(cprize).toLocaleString('es-AR', {
+                   minimumFractionDigits: 2,
+                   maximumFractionDigits: 2
+               })} $ ARS</span></p>
          <p class="capitalize mt-2 text-gray-700">trade now</p>
          <div class="trade-container max-h-80 overflow-y-auto no-scrollbar mt-5">
                 <table class=" border-none w-full border text-white text-center">
@@ -150,4 +166,5 @@ const closemodal = () => {
     bodyOverlay.classList.add('hidden');
     modalContent.classList.remove('active');
 }
+
 bodyOverlay.addEventListener('click', closemodal);
