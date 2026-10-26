@@ -7,14 +7,15 @@ El Sistema busca facilitar el acceso a datos financieros relacionados con activo
 
 # CryptoInfo
 
-Plataforma Web para visualizar información y métricas de criptomonedas.
+Plataforma Web para visualizar información y métricas de Criptomonedas.
 
 ## Requisitos
 
 Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-- Node.js 18 o superior.
-- npm (incluido con Node.js).
+- Node.js v18 o superior.
+- npm v7.8.5 (incluido con Node.js).
+- Expressjs v5.3.0
 
 ## Instalación
 
@@ -63,11 +64,10 @@ npm run dev
 
 ## Dependencias principales
 
-- Express
-- JSON Web Token (JWT)
-- Cookie Parser
-- Dotenv
-- Nodemon
+- Express v5.3.0
+- JSON Web Token (JWT) RFC 7519 v1.1.0
+- Dotenv v18.0.9
+- Nodemon v1.4.7
 
 ### Autor
 
