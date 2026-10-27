@@ -60,3 +60,34 @@ button:hover {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+.languageBtn{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    padding: 4px 8px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.languageBtn:hover{
+    background-color: transparent;
+    color: rgb(250, 204, 21);
+    border: none;
+    font-size: 16px;
+}
+
+.footer-legal{
+    background-color: transparent;
+    margin: .2rem 0 0;
+    color: white;
+    font-size: .72rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
