@@ -54,8 +54,8 @@ const showData = (data) => { //Print data on screen
         </td>
         <td class=" p-2 border-gray-500">
           ${val.current_price.toLocaleString('es-AR', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
+               minimumFractionDigits: 2,
+               maximumFractionDigits: 2
           })}
           ARS
         </td>
@@ -63,7 +63,7 @@ const showData = (data) => { //Print data on screen
         <td class="p-2 border-gray-500">
             ${(val.market_cap / 1000000).toLocaleString('es-AR', {
                   minimumFractionDigits: 2,
-              maximumFractionDigits: 2
+                  maximumFractionDigits: 2
             })}
             ARS
         </td>
@@ -115,9 +115,11 @@ const showModal = (data, cprize) => {
        <div class="modal-right">
        <h2 class="mb-1 text-3xl capitalize font-bold text-gray-700">Current Prize:</h2>
        <p class="mb-4 capitalize text-2xl font-semibold">1 ${data.symbol}= <span class="text-yellow-400">
-                  ${Number(cprize).toLocaleString('es-AR', {
-                   minimumFractionDigits: 2,
-                   maximumFractionDigits: 2
+                   ${Number(cprize).toLocaleString('es-AR', {
+                    style: 'currency',
+                    currency: 'ARS',
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
                })} $ ARS</span></p>
          <p class="capitalize mt-2 text-gray-700">trade now</p>
          <div class="trade-container max-h-80 overflow-y-auto no-scrollbar mt-5">
@@ -152,7 +154,7 @@ const showModal = (data, cprize) => {
 
     data.tickers.forEach((v) => {
         let tradeItem = `<tr   class="shadow-sm  shadow-gray-700  cursor-pointer">
-        <td class=" border-gray-500 p-1.5 mt-2"><span>${v.base.slice(0, 10)} / ${v.target.slice(0, 10)}</span></td>
+        <td class=" border-gray-500 p-1.5 mt-2"><span>${v.base.slice(0, 10)} / ARS </span></td>
 
         <td class=" p-1.5 border-gray-500 mt-2">${v.market.name}</td>
         <td class=" p-1.5 border-gray-500 mt-2"><button class="bg-yellow-500 w-16 rounded-sm capitalize font-semibold h-9"><a target="_BLANK" class="block" href="${v.trade_url}">Trade</a></button></td>
